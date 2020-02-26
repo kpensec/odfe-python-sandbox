@@ -1,11 +1,11 @@
 # insert boiler plate
 
 from elasticsearch import Elasticsearch
-from .secret import user, password
+from config import user, password
 
 cli = Elasticsearch(
         ["localhost:9200"],
-        verify_certs=False # 
+        verify_certs=False, #  TODO check cert!!!
         http_auth=(user,password)
 )
 
