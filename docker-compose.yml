@@ -1,0 +1,13 @@
+version: "3"
+services:
+  database:
+    image: "amazon/opendistro-for-elasticsearch:1.4.0"
+    environment:
+      - "cluster.name=odfe-cluster"
+      - "node.name=odfe-node"
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+        #  cache:
+        #    image: "redis"
